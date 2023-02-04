@@ -1,0 +1,14 @@
+{% extends 'AppEntrega/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+…
+    {% if request.user.is_authenticated %}
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+        <h1>Bienvenidos a mi nuevo blog dedicado pura y exclusivamente al cine</h1>
+        <h3>Aqui podras subir las reseñas de tus peliculas y series favoritas,
+            asi tambien como leer las criticas de otras personas. Tambien podras
+            buscar los premios que hayan ganado dichas peliculas.
+        </h3>
+     {% endif %}
+{% endblock %}
+

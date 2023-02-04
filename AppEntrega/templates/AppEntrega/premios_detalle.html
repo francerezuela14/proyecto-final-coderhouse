@@ -1,0 +1,14 @@
+{% extends 'AppEntrega/padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+
+    <p>Nombre de la pelicula: <h1><i>{{premio.pelicula}}</i></h1></p>
+    <p>Premio: <h4><i>{{premio.premio}}</i></h4></p>
+    <p>año: <h5><i>{{premio.año}}</i></h5></p>
+    <p> <a href="{% url 'Premios list' %}">Regresar</a></p>
+</div>
+{% endblock %}

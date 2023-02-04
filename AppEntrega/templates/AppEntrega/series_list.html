@@ -1,0 +1,33 @@
+{% extends "AppEntrega/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Series del blog</h1>
+<ul>
+    
+    {% if object_list %}    
+        
+        {% for series in object_list %}
+
+            <li>
+                <p>NOMBRE: {{ series.nombre }} </p>
+                <p> 
+                    <a href="{% url 'Series detail' series.id %}">Ver</a> | 
+                    <a href="{% url 'Series edit' series.id %}">Editar</a> | 
+                    <a href="{% url 'Series delete' series.id %}">Borrar</a> 
+                
+                </p> 
+            </li>
+
+        {% endfor %}
+    
+    {% else %}
+        <p class="text-black-75 mb-5">Aun no hay series valoradas</p>
+    {% endif %}
+        <a href="{% url 'Series' %}">Agregar serie nueva</a>
+</ul>
+{% endblock %}
+    
+
+ 

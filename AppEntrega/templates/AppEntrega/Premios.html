@@ -1,0 +1,26 @@
+{% extends "AppEntrega/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    {%if miFormulario.errors%}
+
+    <p style="color:red;"> estan mal los datos, revisar</p>
+
+    {%endif %}
+
+    <h1>Premios</h1>
+    <h4>Aqui puedes agregar las peliculas que hayan sido premiadas.</h4>
+    <form action="" method="POST">{% csrf_token %}
+
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+
+        <input type="submit", value="Enviar">
+    </form>
+
+{% endblock %}

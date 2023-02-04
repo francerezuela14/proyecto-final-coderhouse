@@ -1,0 +1,31 @@
+{% extends "AppEntrega/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Premios del blog</h1>
+<ul>
+    
+    {% if object_list %}    
+        
+        {% for premios in object_list %}
+
+            <li>
+                <p>NOMBRE: {{ premios.pelicula }} </p>
+                <p> 
+                    <a href="{% url 'Premios detail' premios.id %}">Ver</a> | 
+                    <a href="{% url 'Premios edit' premios.id %}">Editar</a> | 
+                    <a href="{% url 'Premios delete' premios.id %}">Borrar</a> 
+                
+                </p> 
+            </li>
+
+        {% endfor %}
+    
+    {% else %}
+        <p class="text-black-75 mb-5">Aun no hay premios mecionados</p>
+    {% endif %}
+        <a href="{% url 'Premios' %}">Agregar Premio nuevo</a>
+</ul>
+{% endblock %}
+    
